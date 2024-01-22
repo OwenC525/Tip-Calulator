@@ -1,4 +1,45 @@
-let bill = 120;
+function calculateAndDipslay() {
+    // get the input values from html form
+    let bill = parseFloat(document.getElementById("totalBill").value)
+    let numOfPpl = parseInt(document.getElementId('numOfPeople').value)
+    let serviceQuality = document.getElementById('serviceQuality').value
+
+    // Calculate tip, total bill, and amount per person using helper functions
+
+    let tip = calculateTip(bill, serviceQuality)
+    let totalBill = calculateTotalBill(bill, tip)
+    let amtPerPerson = calculateAmtPerPers(totalBill, numOfPpl)
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* let bill = 120;
 let numOfPpl = 5;
 let serviceQuality = 'Great';
 
@@ -30,4 +71,4 @@ let amtPerPerson = calcAmtPerPers(totalBill, numOfPpl)
 
 console.log('Tip: $' + tip)
 console.log('Total Bill: $' + totalBill)
-console.log('Amount per Person: $' + amtPerPerson)
+console.log('Amount per Person: $' + amtPerPerson) */
