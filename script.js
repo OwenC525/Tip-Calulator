@@ -5,12 +5,16 @@ function calculateAndDipslay() {
     let serviceQuality = document.getElementById('serviceQuality').value
 
     // Calculate tip, total bill, and amount per person using helper functions
-
     let tip = calculateTip(bill, serviceQuality)
     let totalBill = calculateTotalBill(bill, tip)
     let amtPerPerson = calculateAmtPerPers(totalBill, numOfPpl)
 
-
+    // Display the results in the HTML document
+  document.getElementById('tipResult').innerText = 'Tip: $' + tip.toFixed(2)
+  document.getElementById('totalBillResult').innerText =
+    'Total Bill: $' + totalBill.toFixed(2)
+  document.getElementById('amtPerPersonResult').innerText =
+    'Amount per person: $' + amtPerPers.toFixed(2)
 
 }
 
