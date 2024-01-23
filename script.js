@@ -1,7 +1,7 @@
-function calculateAndDipslay() {
+function calculateAndDisplay() {
     // get the input values from html form
     let bill = parseFloat(document.getElementById("totalBill").value)
-    let numOfPpl = parseInt(document.getElementId('numOfPeople').value)
+    let numOfPpl = parseInt(document.getElementById('numOfPeople').value)
     let serviceQuality = document.getElementById('serviceQuality').value
 
     // Calculate tip, total bill, and amount per person using helper functions
@@ -12,20 +12,39 @@ function calculateAndDipslay() {
     // Display the results in the HTML document
   document.getElementById('tipResult').innerText = 'Tip: $' + tip.toFixed(2)
   document.getElementById('totalBillResult').innerText =
-    'Total Bill: $' + totalBill.toFixed(2)
+    'Total Bill: $' + totalBill.toFixed(2) //ends number at second decimal
   document.getElementById('amtPerPersonResult').innerText =
-    'Amount per person: $' + amtPerPers.toFixed(2)
+    'Amount per person: $' + amtPerPerson.toFixed(2)
+
 
 }
 
 
+    //helper function to calculate tip based on the bill and service quality
+    function calculateTip(bill, quality) {
+        if(quality === 'Great') {
+            return bill * .2
+        } else if(quality === 'Good') {
+            return bill * .15
+        } else if(quality === 'Poor') {
+            return bill * .10
+        } else {
+            return 0
+        }
+
+    }
 
 
+    //helper function to calculate total bill by adding the original bill and tip
+    function calculateTotalBill(bill, tip) {
+        return bill + tip
+    }
 
 
-
-
-
+    //helper function to 
+    function calculateAmtPerPers(totalBill, numOfPpl) {
+        return totalBill / numOfPpl
+    }
 
 
 
